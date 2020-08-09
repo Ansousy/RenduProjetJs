@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>minmax()</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        color: #f00;
+        font-family: sans-serif;
+        font-size: 10px;
+      }
+      h2 {
+        margin-bottom: 5px;
+        color: #fc0;
+      }
+      section {
+        display: grid;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      div {
+        background-color: #fc0;
+        padding: 5px;
+        border-radius: 3px;
+      }
+      #longueur {
+        grid-template-columns: minmax(100px, 200px) 1fr 1fr;
+      }
+      #pourcentage {
+        grid-template-columns: minmax(100px, 50%) 1fr 1fr;
+      }
+      #longueur-flexible {
+        grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
+      }
+      #max-content {
+        grid-template-columns: minmax(max-content, max-content) 1fr 1fr;
+      }
+      #min-content {
+        grid-template-columns: minmax(min-content, min-content) 1fr 1fr;
+      }
+      #auto {
+        grid-template-columns: minmax(auto, auto) 1fr 1fr;
+      }
+      #responsive {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    </style>
+  </head>
+  <body>
+    <h1>minmax()</h1>
+    <h2>Longueur</h2>
+    <section id="longueur">
+      <div>minmax(100px, 200px)</div>
+      <div>1fr</div>
+      <div>1fr</div>
+    </section>
+    <h2>Pourcentage</h2>
+    <section id="pourcentage">
+      <div>minmax(100px, 50%)</div>
+      <div>1fr</div>
+      <div>1fr</div>
+    </section>
+    <h2>Longueur flexible</h2>
+    <section id="longueur-flexible">
+      <div>minmax(200px, 1fr)</div>
+      <div>1fr</div>
+      <div>1fr</div>
+    </section>
+    <h2>max-content</h2>
+    <section id="max-content">
+      <div>minmax(max-content, max-content)</div>
+      <div>1fr</div>
+      <div>1fr</div>
+    </section>
+    <h2>min-content</h2>
+    <section id="min-content">
+      <div>minmax(min-content, min-content)</div>
+      <div>1fr</div>
+      <div>1fr</div>
+    </section>
+    <h2>auto</h2>
+    <section id="auto">
+      <div>minmax(auto, auto)</div>
+      <div>1fr</div>
+      <div>1fr</div>
+    </section>
+    <h2>Responsive</h2>
+    <section id="responsive">
+      <div>repeat(auto-fit, minmax(200px, 1fr))</div>
+      <div>repeat(auto-fit, minmax(200px, 1fr))</div>
+      <div>repeat(auto-fit, minmax(200px, 1fr))</div>
+    </section>
+  </body>
+</html>
